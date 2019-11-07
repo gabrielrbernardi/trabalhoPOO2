@@ -1,6 +1,9 @@
 package trabalho2POO;
 public class Quadrado extends QuadrilateroAbstract {
 	public Quadrado(int lados[]) {
+		if(lados[0] <= 0) {
+			throw new IllegalArgumentException("Valor inválido, o valor esperado é maior que 0 (zero)");
+		}
 		this.ladosQuadrilatero[0] = lados[0];
 	}
 	
