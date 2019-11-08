@@ -2,6 +2,9 @@ package trabalho2POO_2;
 public abstract class ContaCorrente {
 	private float saldoTotal;
 	
+	/*********************
+	 * GETTERS E SETTERS *
+	 *********************/
 	public float getSaldoTotal() {
 		return saldoTotal;
 	}
@@ -9,11 +12,13 @@ public abstract class ContaCorrente {
 		this.saldoTotal = saldoTotal;
 	}
 	
+	/***********************
+	 * METODOS ESPECIFICOS *
+	 ***********************/
 	public void sacar(float val) {
 		
 	}
 	public void depositar(float val) {
-		this.setSaldoTotal(this.getSaldoTotal() + val);
 	}
 	public float obterSaldo() {
 		return this.getSaldoTotal();
