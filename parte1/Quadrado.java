@@ -4,9 +4,9 @@
  * Autor: 						  Gabriel Ribeiro Bernardi	  *
  * Matricula: 					  11821BCC036		    	  *
  * Data de inicio: 				  06/11/2019				  *
- * Data final de desenvolvimento: 06/11/2019      		      *
- * Data da ultima modificacao: 	  06/11/2019				  *
- * Dias de desenvolvimento:       1                           *
+ * Data final de desenvolvimento: 09/11/2019      		      *
+ * Data da ultima modificacao: 	  09/11/2019				  *
+ * Dias de desenvolvimento:       4                           *
  * Linguagem utilizada:			  Java						  *
  * Plataforma Java utilizada:     Java SE 11 Development Kit  *
  *************************************************************/
@@ -25,7 +25,8 @@ public class Quadrado extends QuadrilateroAbstract {
 	
 	@Override
 	public void apresentarDados() {
-		System.out.println("Os 4 lados possuem valor: " + this.ladosQuadrilatero[0]);
+		JOptionPane.showMessageDialog(null, "Os 4 lados possuem valor " + this.ladosQuadrilatero[0]);
+//		System.out.println("Os 4 lados possuem valor: " + this.ladosQuadrilatero[0]);
 	}
 	
 	@Override

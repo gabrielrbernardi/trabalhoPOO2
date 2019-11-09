@@ -4,22 +4,26 @@
  * Autor: 						  Gabriel Ribeiro Bernardi	  *
  * Matricula: 					  11821BCC036		    	  *
  * Data de inicio: 				  06/11/2019				  *
- * Data final de desenvolvimento: 06/11/2019      		      *
- * Data da ultima modificacao: 	  06/11/2019				  *
- * Dias de desenvolvimento:       1                           *
+ * Data final de desenvolvimento: 09/11/2019      		      *
+ * Data da ultima modificacao: 	  09/11/2019				  *
+ * Dias de desenvolvimento:       4                           *
  * Linguagem utilizada:			  Java						  *
  * Plataforma Java utilizada:     Java SE 11 Development Kit  *
  *************************************************************/
 
 
 package trabalho2POO;
+
+import javax.swing.JOptionPane;
+
 public abstract class QuadrilateroAbstract implements FiguraGeometrica{
 	public int ladosQuadrilatero[] = new int[4];
 	
 	public void apresentarDados() {
-		for(int i  = 0; i < 4; i++) {
-			System.out.println(this.ladosQuadrilatero[i]);
-		}
+		JOptionPane.showMessageDialog(null, "Os lados do quadrilatero medem:\n" + ladosQuadrilatero[0] + ", " + ladosQuadrilatero[1] + ", " + ladosQuadrilatero[2] + ", " + ladosQuadrilatero[3]);
+//		for(int i  = 0; i < 4; i++) {
+//			System.out.println(this.ladosQuadrilatero[i]);
+//		}
 	}
 	
 	public int calcularArea(int lados[]) {
