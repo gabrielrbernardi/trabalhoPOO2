@@ -1,9 +1,24 @@
+/**************************************************************
+ * Nome do projeto: 			  Trabalho2POO_2              *
+ * Nome, tipo de aquivo:		  ContaCorrenteEspecial, class*
+ * Autor: 						  Gabriel Ribeiro Bernardi	  *
+ * Matricula: 					  11821BCC036		    	  *
+ * Data de inicio: 				  06/11/2019				  *
+ * Data final de desenvolvimento: 13/11/2019      		      *
+ * Data da ultima modificacao: 	  13/11/2019				  *
+ * Dias de desenvolvimento:       7                           *
+ * Linguagem utilizada:			  Java						  *
+ * Plataforma Java utilizada:     Java SE 12 Development Kit  *
+ *************************************************************/
+
+
 package trabalho2POO_2;
+import javax.swing.JOptionPane;
 public class ContaCorrenteEspecial extends ContaCorrente{
 	private float limiteEspecialCC;												//Limite especial conta corrente
 	private float saldoLimiteEspecial;
 	private static int numConta = 0;
-	
+	private String msg;
 	/**************
 	 * CONSTRUTOR *
 	 **************/
@@ -35,7 +50,7 @@ public class ContaCorrenteEspecial extends ContaCorrente{
 	 * METODOS ESPECIFICOS *
 	 ***********************/
 	public void sacar(float val) {
-		System.out.println("Tentativa de saque de " + val);
+		JOptionPane.showMessageDialog(null, "Tentativa de saque de " + val);
 		if(val > this.getSaldoTotal()) {
 			this.setSaldoTotal(this.getSaldoTotal() - val);						//Se valor desejado para saque for maior que o saldoTotal, desconta o valor 'val' do saldoTotal, porem o saldoTotal ficara negativo
 			float dif = Math.abs(this.getSaldoTotal());							//Com o saldo atual negativo, dif recebe o valor absoluto de saldo atual, para que seja possivel descontar esse valor do saldoLimiteEspecial
@@ -46,8 +61,9 @@ public class ContaCorrenteEspecial extends ContaCorrente{
 			this.setSaldoTotal(this.getSaldoTotal() - val);						//Se valor desejado para saque for menor que o saldoTotal, desconta-se esse valor do saldoTotal sem que seja alterado o saldoLimiteEspecial 
 		}
 	}
+	@Override
 	public void depositar(float val) {
-		System.out.println("Tentativa de deposito de " + val);
+		JOptionPane.showMessageDialog(null, "Tentativa de deposito de " + val);
 		if(this.getSaldoLimiteEspecial() == this.getLimiteEspecialCC()){
 			this.setSaldoTotal(this.getSaldoTotal() + val);						//Se o valor de saldoLimiteEspecial for igual a limiteEspecialCC, deposita o valor diretamente em saldoTotal
 		}else {
@@ -60,7 +76,8 @@ public class ContaCorrenteEspecial extends ContaCorrente{
 	
 	public void verificaLimite() {
 		if(this.getSaldoLimiteEspecial() < 0) {
-			throw new LimiteException("Limite especial execido");
+			JOptionPane.showMessageDialog(null, new LimiteException("Limite especial execido"));
+			System.exit(0);
 		}
 		
 //		if(this.getSaldoLimiteEspecial() <= 0 || this.getSaldoTotal() < 0) {
@@ -70,22 +87,27 @@ public class ContaCorrenteEspecial extends ContaCorrente{
 	
 	public void alterarLimiteEspecial(float val) {
 		this.setLimiteEspecialCC(val);
+		if(this.getSaldoLimiteEspecial() > this.getLimiteEspecialCC()) {
+			float var = this.getSaldoLimiteEspecial() - this.getLimiteEspecialCC();
+			this.setSaldoTotal(this.getSaldoTotal() + var);
+			this.setSaldoLimiteEspecial(this.getSaldoLimiteEspecial() - var);
+		}
 	}
 	
 	public void obterSaldoGeral() {
 		//De acordo com a numeracao da conta bancaria, imprime o valor na tela formatado, com padrao de 4 digitos
 		if(ContaCorrenteEspecial.getNumConta() > 0 && ContaCorrenteEspecial.getNumConta() < 10) {
-			System.out.println("Saldo da conta 000" + ContaCorrenteEspecial.getNumConta());			
+			msg = "Saldo da conta 000" + ContaCorrenteEspecial.getNumConta();
 		}else if(ContaCorrenteEspecial.getNumConta() >= 10 && ContaCorrenteEspecial.getNumConta() < 100) {
-			System.out.println("Saldo da conta 00" + ContaCorrenteEspecial.getNumConta());
+			msg = "Saldo da conta 00" + ContaCorrenteEspecial.getNumConta();
 		}else if(ContaCorrenteEspecial.getNumConta() >= 100 && ContaCorrenteEspecial.getNumConta() < 1000) {
-			System.out.println("Saldo da conta 0" + ContaCorrenteEspecial.getNumConta());
+			msg = "Saldo da conta 0" + ContaCorrenteEspecial.getNumConta();
 		}else {
-			System.out.println("Saldo da conta " + ContaCorrenteEspecial.getNumConta());
+			msg = "Saldo da conta " + ContaCorrenteEspecial.getNumConta();
 		}
-		System.out.println("Saldo Geral atual: " + this.obterSaldo());
-		System.out.println("Saldo Especial atual: " + this.getSaldoLimiteEspecial());
-		System.out.println("Limite Especial original: " + limiteEspecialCC);
-		System.out.println();
+		JOptionPane.showMessageDialog(null, String.format(msg + "\n\n" + 
+											"Saldo Geral atual: R$%.2f\n" + 
+											"Saldo Especial atual: R$ %.2f\n" + 
+											"Limite Especial original: R$%.2f", this.obterSaldo(), this.getSaldoLimiteEspecial(), limiteEspecialCC));
 	}
 }
