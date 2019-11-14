@@ -4,21 +4,22 @@
  * Autor: 						  Gabriel Ribeiro Bernardi	  *
  * Matricula: 					  11821BCC036		    	  *
  * Data de inicio: 				  06/11/2019				  *
- * Data final de desenvolvimento: 09/11/2019      		      *
- * Data da ultima modificacao: 	  09/11/2019				  *
- * Dias de desenvolvimento:       4                           *
+ * Data final de desenvolvimento: 12/11/2019      		      *
+ * Data da ultima modificacao: 	  12/11/2019				  *
+ * Dias de desenvolvimento:       6                           *
  * Linguagem utilizada:			  Java						  *
- * Plataforma Java utilizada:     Java SE 11 Development Kit  *
+ * Plataforma Java utilizada:     Java SE 12 Development Kit  *
  *************************************************************/
 
 
 package trabalho2POO;
 import javax.swing.JOptionPane;
 public class Quadrado extends QuadrilateroAbstract {
+	String teste;
 	public Quadrado(int lados[]) {
 		if(lados[0] <= 0) {
-			JOptionPane.showMessageDialog(null, "Valor inválido, o valor esperado é maior que 0 (zero)", "Error", JOptionPane.WARNING_MESSAGE);
-			throw new IllegalArgumentException("Valor inválido, o valor esperado é maior que 0 (zero)");
+			JOptionPane.showMessageDialog(null, new IllegalArgumentException("\nValor inválido, o valor esperado é maior que 0 (zero)"), "Error", JOptionPane.WARNING_MESSAGE);
+			System.exit(0);
 		}
 		this.ladosQuadrilatero[0] = lados[0];
 	}

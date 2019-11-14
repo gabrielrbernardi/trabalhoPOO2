@@ -4,11 +4,11 @@
  * Autor: 						  Gabriel Ribeiro Bernardi	  *
  * Matricula: 					  11821BCC036		    	  *
  * Data de inicio: 				  06/11/2019				  *
- * Data final de desenvolvimento: 09/11/2019      		      *
- * Data da ultima modificacao: 	  09/11/2019				  *
- * Dias de desenvolvimento:       4                           *
+ * Data final de desenvolvimento: 12/11/2019      		      *
+ * Data da ultima modificacao: 	  12/11/2019				  *
+ * Dias de desenvolvimento:       6                           *
  * Linguagem utilizada:			  Java						  *
- * Plataforma Java utilizada:     Java SE 11 Development Kit  *
+ * Plataforma Java utilizada:     Java SE 12 Development Kit  *
  *************************************************************/
 
 //Classe criada como pedida no exercicio 9

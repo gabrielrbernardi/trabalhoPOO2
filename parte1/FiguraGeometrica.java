@@ -8,7 +8,7 @@
  * Data da ultima modificacao: 	  09/11/2019				  *
  * Dias de desenvolvimento:       4                           *
  * Linguagem utilizada:			  Java						  *
- * Plataforma Java utilizada:     Java SE 11 Development Kit  *
+ * Plataforma Java utilizada:     Java SE 12 Development Kit  *
  *************************************************************/
 
 
