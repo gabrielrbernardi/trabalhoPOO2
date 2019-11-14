@@ -1,4 +1,3 @@
-#Instructions to run this project
 Observations:
 
 To execute this program, download file Quadrilatero.jar
