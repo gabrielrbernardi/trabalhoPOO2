@@ -19,7 +19,7 @@ public class Quadrado extends QuadrilateroAbstract {
 	public Quadrado(int lados[]) {
 		if(lados[0] <= 0) {
 			JOptionPane.showMessageDialog(null, new IllegalArgumentException("\nValor inválido, o valor esperado é maior que 0 (zero)"), "Error", JOptionPane.WARNING_MESSAGE);
-			System.exit(0);
+			System.exit(1);
 		}
 		this.ladosQuadrilatero[0] = lados[0];
 	}

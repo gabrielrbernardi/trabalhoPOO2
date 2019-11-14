@@ -17,6 +17,10 @@ import javax.swing.JOptionPane;
 public class Quadrilatero extends QuadrilateroAbstract{
 	public Quadrilatero(int lados[]){
 		for(int i = 0; i < 4; i++) {
+			if(lados[i] <= 0) {
+				JOptionPane.showMessageDialog(null, String.format("O valor do lado %d deve ser maior que 0", i+i));
+				System.exit(1);
+			}
 			this.ladosQuadrilatero[i] = lados[i];
 		}
 	}

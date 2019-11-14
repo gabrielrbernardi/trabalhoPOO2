@@ -16,12 +16,14 @@ import javax.swing.JOptionPane;
 public class Retangulo extends QuadrilateroAbstract {
 	public Retangulo(int lados[]) {
 		for(int i = 0; i < 2; i++) {
-			if(lados [0] <= 0) {
-				JOptionPane.showMessageDialog(null, "Valor inválido, o valor esperado é maior que 0 (zero)", "Error", JOptionPane.WARNING_MESSAGE);
+			if(lados[i] <= 0) {
+				JOptionPane.showMessageDialog(null, String.format("Valor inválido, o valor do lado %d\ndeve ser maior que 0 (zero)", i+1), "Error", JOptionPane.WARNING_MESSAGE);
+				System.exit(1);
 			}
 		}
 		if(lados[0] == lados[1]) {
 			JOptionPane.showMessageDialog(null, "Valor inválido, modifique um dos valores a fim de torná-los diferentes", "Error", JOptionPane.WARNING_MESSAGE);
+			System.exit(1);
 		}
 		
 		for(int i = 0; i < 2; i++) {

@@ -26,15 +26,16 @@ public class Main {
 					+ " 2 - Quadrado\n"
 					+ " 3 - Retangulo\n"
 					+ " 4 - Sobre\n"
+					+ " 5 - Sair\n"
 					+ "\nEscolha dentre as opcoes do menu o tipo de quadrilatero de entrada\n\n"
-					+ "Escolha", "Mensagem", JOptionPane.INFORMATION_MESSAGE);
+					+ "Escolha", "Mensagem", JOptionPane.QUESTION_MESSAGE);
 			choose = Integer.parseInt(escolha);			
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, new NumberFormatException("\nEntrada invalida"), "Erro", JOptionPane.WARNING_MESSAGE);
 			System.exit(0);
 		}
 //		System.out.println(choose);
-		if (choose > 4 || choose < 1) {
+		if (choose > 5 || choose < 1) {
 			JOptionPane.showMessageDialog(null, "Opcao invalida", "Erro", JOptionPane.WARNING_MESSAGE);
 			System.exit(0);
 		}
@@ -42,8 +43,8 @@ public class Main {
 		if(choose == 1) {
 //			System.out.println("Digite o tamanho do lado do QUADRILATERO");
 			try {
-				JOptionPane.showMessageDialog(null, "Digite o tamanho do lado do QUADRILATERO NORMAL\n");
-				valor = JOptionPane.showInputDialog(null, "Tamanho lado 1: ");
+				String msg = "Digite o tamanho do lado do QUADRILATERO NORMAL\n";
+				valor = JOptionPane.showInputDialog(null, msg + "Tamanho lado 1: ");
 				lados[0] = Integer.parseInt(valor);
 				valor = JOptionPane.showInputDialog(null, "Tamanho lado 2: ");
 				lados[1] = Integer.parseInt(valor);
@@ -115,6 +116,8 @@ public class Main {
 												+ "Versao do programa: 1.6\n"
 												+ "Linguagem utilizada: Java\n"
 												+ "Plataforma Java utilizada: Java SE 12 Development Kit");
+		}else if(choose == 5){
+			JOptionPane.showMessageDialog(null, "Termino solicitado pelo usuario\nTenha um bom dia", "Volte Sempre", JOptionPane.INFORMATION_MESSAGE);
 		}
 		System.exit(0);
 	}
