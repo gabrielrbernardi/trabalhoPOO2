@@ -2,7 +2,10 @@
 
 Observations:
 
-To execute this program, download file Quadrilatero.jar
-After this, verify if this file is checked to be executable.
-To run, do double click on this file or type on terminal (linux)
-  $java -jar Quadrilatero.jar
+To execute this program, download file Quadrilatero.jar<br>
+After this, verify if this file is checked to be executable.<br>
+To run, do double click on this file or type on terminal (linux)<br>
+<br>
+$java -jar Quadrilatero.jar
+<br><br>
+This software was developed using Java SE 12 Development Kit
